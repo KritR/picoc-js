@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -pedantic -g -DUNIX_HOST -DVER=\"`svnversion -n`\"
+CFLAGS=-Wall -pedantic -g -DUNIX_HOST -DVER=\"2.1\"
 LIBS=-lm -lreadline
 
 TARGET	= picoc
