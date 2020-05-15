@@ -118,7 +118,9 @@ void UnistdGetcwd(struct ParseState *Parser, struct Value *ReturnValue, struct V
 
 void UnistdGetdtablesize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
+#ifndef EMSCRIPTEN
     ReturnValue->Val->Integer = getdtablesize();
+#endif
 }
 
 void UnistdGetegid(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
@@ -158,7 +160,9 @@ void UnistdGetpagesize(struct ParseState *Parser, struct Value *ReturnValue, str
 
 void UnistdGetpass(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
 {
+#ifndef EMSCRIPTEN
     ReturnValue->Val->Pointer = getpass(Param[0]->Val->Pointer);
+#endif
 }
 
 #if 0

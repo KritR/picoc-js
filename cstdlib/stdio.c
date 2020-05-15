@@ -3,9 +3,16 @@
 
 #include <errno.h>
 #include "../interpreter.h"
+#include "../emcc_musl.h"
 
 #define MAX_FORMAT 80
 #define MAX_SCANF_ARGS 10
+
+#ifdef EMSCRIPTEN
+#define FILE_STRUCT_SIZE FILE_STRUCT_SIZE_MUSL
+#else
+#define FILE_STRUCT_SIZE (sizeof(FILE))
+#endif
 
 static int Stdio_ZeroValue = 0;
 static int EOFValue = EOF;
@@ -684,13 +691,13 @@ void StdioSetupFunc(Picoc *pc)
     struct ValueType *FilePtrType;
 
     /* make a "struct __FILEStruct" which is the same size as a native FILE structure */
-    StructFileType = TypeCreateOpaqueStruct(pc, NULL, TableStrRegister(pc, "__FILEStruct"), sizeof(FILE));
+    StructFileType = TypeCreateOpaqueStruct(pc, NULL, TableStrRegister(pc, "__FILEStruct"), FILE_STRUCT_SIZE);
     
     /* get a FILE * type */
     FilePtrType = TypeGetMatching(pc, NULL, StructFileType, TypePointer, 0, pc->StrEmpty, TRUE);
 
     /* make a "struct __va_listStruct" which is the same size as our struct StdVararg */
-    TypeCreateOpaqueStruct(pc, NULL, TableStrRegister(pc, "__va_listStruct"), sizeof(FILE));
+    TypeCreateOpaqueStruct(pc, NULL, TableStrRegister(pc, "__va_listStruct"), FILE_STRUCT_SIZE);
     
     /* define EOF equal to the system EOF */
     VariableDefinePlatformVar(pc, NULL, "EOF", &pc->IntType, (union AnyValue *)&EOFValue, FALSE);
