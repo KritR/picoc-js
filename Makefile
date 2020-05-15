@@ -1,15 +1,15 @@
-CC=gcc
+#CC=gcc
 CFLAGS=-Wall -pedantic -g -DUNIX_HOST -DVER=\"2.1\"
-LIBS=-lm -lreadline
+LIBS=-lm 
 
-TARGET	= picoc
+TARGET	= output.html
 SRCS	= picoc.c table.c lex.c parse.c expression.c heap.c type.c \
 	variable.c clibrary.c platform.c include.c debug.c \
 	platform/platform_unix.c platform/library_unix.c \
 	cstdlib/stdio.c cstdlib/math.c cstdlib/string.c cstdlib/stdlib.c \
 	cstdlib/time.c cstdlib/errno.c cstdlib/ctype.c cstdlib/stdbool.c \
 	cstdlib/unistd.c
-OBJS	:= $(SRCS:%.c=%.o)
+OBJS	:= $(SRCS:%.c=%.c)
 
 all: $(TARGET)
 
