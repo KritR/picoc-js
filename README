@@ -1,5 +1,12 @@
 # THIS IS JUST A WASM COMPILABLE VERSION
 
+Essentially I recompiled PicoC with a slightly modified makefile and small tweaks in the code to make it WASM compatible ( removing unnecessary includes or methods calls that couldn't be satisfied with WASM ). 
+
+## Todo
+
+- More robust build system
+- Automatic NPM deployments ?
+
 ## Original Repo
 https://gitlab.com/zsaleeba/picoc/
 
