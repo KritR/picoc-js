@@ -1,8 +1,8 @@
 #CC=gcc
-CFLAGS=-pedantic -g -DUNIX_HOST -DVER=\"2.1\" --preload-file example_code/hello.c -s MODULARIZE=1 -s 'EXPORT_NAME="PicocModule"'
+CFLAGS=-pedantic -g -DUNIX_HOST -DVER=\"2.1\" -s MODULARIZE=1 -s 'EXPORT_NAME="PicocModule"'
 LIBS=-lm 
 
-TARGET	= output.js
+TARGET	= index.js
 SRCS	= picoc.c table.c lex.c parse.c expression.c heap.c type.c \
 	variable.c clibrary.c platform.c include.c debug.c \
 	platform/platform_unix.c platform/library_unix.c \

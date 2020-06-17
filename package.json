@@ -1,0 +1,10 @@
+{
+  "name": "picoc-js",
+  "version": "1.0.0",
+  "description": "a tiny c interpreter compiled to wasm",
+  "main": "index.js",
+  "repository": "git@github.com:KritR/picoc-wasm.git",
+  "author": "Krithik Rao <krdevmail@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
