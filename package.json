@@ -1,6 +1,6 @@
 {
   "name": "picoc-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a tiny c interpreter compiled to wasm",
   "main": "index.js",
   "files": ["index.js", "picoc.js", "picoc.wasm"],
@@ -10,5 +10,6 @@
   "private": false,
   "scripts": {
     "build": "emmake make"
-  }
+  },
+  "type": "module"
 }
