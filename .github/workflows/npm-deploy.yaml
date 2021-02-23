@@ -1,0 +1,30 @@
+name: NPM Deploy Package
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Setup emsdk
+      uses: mymindstorm/setup-emsdk@v7
+      with:
+        # Make sure to set a version number!
+        version: 1.38.40
+        # This is the name of the cache folder.
+        # The cache folder will be placed in the build directory,
+        #  so make sure it doesn't conflict with anything!
+        actions-cache-folder: 'emsdk-cache'
+    - run: npm run build
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
