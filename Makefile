@@ -1,5 +1,5 @@
 #CC=gcc
-CFLAGS=-pedantic -g -DUNIX_HOST -DVER=\"2.1\" -s MODULARIZE=1 -s 'EXPORT_NAME="PicocModule"' -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["runc"]' --pre-js "pre-module.js" --post-js "post-module.js" --extern-post-js "extern-post-module.js" -Os
+CFLAGS=-pedantic -g -DUNIX_HOST -DVER=\"2.1\" -s MODULARIZE=1 -s 'EXPORT_NAME="PicocModule"' -s 'EXTRA_EXPORTED_RUNTIME_METHODS=["runc"]' --pre-js "pre-module.js" --post-js "post-module.js" -Os
 LIBS=-lm 
 
 TARGET	= picoc.js

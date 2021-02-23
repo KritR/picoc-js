@@ -1,8 +1,9 @@
 {
   "name": "picoc-js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a tiny c interpreter compiled to wasm",
   "main": "bundle.js",
+  "type": "module",
   "files": [
     "bundle.js",
     "picoc.wasm"
@@ -14,8 +15,8 @@
   "scripts": {
     "build": "emmake make && rollup -c"
   },
-  "type": "module",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
     "rollup": "^2.39.1"
   }
 }
