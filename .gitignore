@@ -1,4 +1,6 @@
 picoc.js
 picoc.wasm
 picoc.html
+bundle.*
 example_code/
+node_modules/

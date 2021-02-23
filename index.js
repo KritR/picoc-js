@@ -1,4 +1,4 @@
-import PicocModule from 'picoc-js';
+import PicocModule from './picoc';
 
 export function runC(cprog) {
    const pc = PicocModule();
