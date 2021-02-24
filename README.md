@@ -1,4 +1,4 @@
-# picoc
+# picoc-js
 
 This is Picoc recompiled to WASM and distributed as a npm package.
 
@@ -25,7 +25,19 @@ intended that no more major features will be added from now on. It's been
 tested on x86-32, x86-64, powerpc, arm, ultrasparc, HP-PA and blackfin
 processors and is easy to port to new targets.
 
-## Example usage
+## Installation
+
+```
+npm i picoc-js
+```
+
+or
+
+```
+yarn add picoc-js
+```
+
+## Example Usage
 
 ```
 import {runC} from 'picoc-js';
@@ -42,7 +54,10 @@ int main() {
 runC(cprog, (output) => { console.log("StdOut: " + output);});
 ```
 
-## Build Process
+## Building Project
+
+Make sure [emscripten](https://emscripten.org/docs/getting_started/index.html) is installed and sourced.
+Then you can simply run:
 
 ```
 yarn build
