@@ -1,6 +1,6 @@
 {
   "name": "picoc-js",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "a tiny c interpreter compiled to wasm",
   "main": "dist/bundle.js",
   "unpkg": "dist/bundle.umd.js",

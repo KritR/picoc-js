@@ -27,6 +27,8 @@ processors and is easy to port to new targets.
 
 ## Installation
 
+### Node.JS
+
 ```
 npm i picoc-js
 ```
@@ -37,7 +39,15 @@ or
 yarn add picoc-js
 ```
 
+### Browser
+
+```
+<script src="https://unpkg.com/picoc-js@1.0.12/dist/bundle.umd.js" type="text/javascript" charset="utf-8"></script>
+```
+
 ## Example Usage
+
+### Node.JS
 
 ```
 import {runC} from 'picoc-js';
@@ -52,6 +62,24 @@ int main() {
 `;
 
 runC(cprog, (output) => { console.log("StdOut: " + output);});
+```
+
+### Browser
+
+```
+
+<script>
+const cprog = `
+#include <stdio.h>
+int main() {
+   // printf() displays the string inside quotation
+   printf("Hello, World!\n");
+   return 0;
+}
+`;
+
+picocjs.runC(cprog, (output) => { console.log(output) });
+</script>
 ```
 
 ## Building Project
