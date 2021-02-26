@@ -5,13 +5,13 @@ export default {
   input: 'index.js',
   output: [
     {
-      file: 'dist/bundle.modern.js',
+      file: 'dist/bundle.js',
       format: 'es'
     },
     {
       file: 'dist/bundle.umd.js',
       format: 'umd',
-      name: 'picoc'
+      name: 'picocjs'
     }
   ],
   plugins: [nodeResolve(), commonjs()]
