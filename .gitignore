@@ -4,3 +4,4 @@ picoc.html
 bundle.*
 example_code/
 node_modules/
+dist/
