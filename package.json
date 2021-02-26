@@ -15,5 +15,6 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
     "rollup": "^2.39.1"
-  }
+  },
+  "keywords": ["c", "parser", "interpreter", "lang", "vm", "virtual machine", "wasm", "browser", "node"]
 }
